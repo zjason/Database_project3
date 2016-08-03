@@ -1,0 +1,43 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: rgba(19, 35, 47, 0.9);
+  font-family: 'Titillium Web', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #1ab188;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+li {
+	color: white;
+}
+
+#top_message
+{
+	display: none;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: center;
+	background-color: rgba(19, 35, 47, 0.9);
+	color: white;
+	border:1px solid #999;
+}
+#login_message
+{
+	color:white;
+}
+#project_name
+{
+	text-align:center;
+}
+
+.userinfo
+{
+	text-align: right;
+}

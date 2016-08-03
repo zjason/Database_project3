@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>User info</title>
+</head>
+<body>
+<h3>Change password:</h3>
+<div id="feedback"></div>
+	<input type="password" id="pass1" name="password" placeholder="Enter Password" />
+	<input type="password" id="pass2" name="password_check" placeholder="Re-entern Passwrod" />
+	<input type="button" id="reset_button" value="Reset" /> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){		
+		$('#reset_button').click(function(){
+			var pass1 = $('#pass1').val();
+			var pass2 = $('#pass2').val();
+			if(pass1 == pass2){
+				$.POST("password_reset.php",{password: pass1},function());
+			}else{
+				$('#feedback').html('Pleas Re-entern password, make sure two passwords are same.');
+			}
+		});	
+	});
+</script>
+</body>
+</html>

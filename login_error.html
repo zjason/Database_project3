@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Log In error</title>
+<link rel="stylesheet" type="text/css" href="css/login_style.css">
+<style type="text/css">
+	#box{color: white;
+		text-align: center;}
+</style>
+</head>
+</head>
+<body>
+
+<h1 text-align="center">Your Email address or Password is wrong!</h1>
+<div id="box"></div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var number = 5;
+		var url='http://cs4604.cs.vt.edu/~zjason/signup.html';
+		function countdown() {
+			setTimeout(countdown, 1000);
+			$('#box').html("Redirecting to Log in page in "+number+" seconds.");
+			number--;
+			if(number<0){
+				window.location = url;
+				number = 0;
+			}
+		}
+		countdown();
+	});
+
+</script>
+
+</body>
+</html>

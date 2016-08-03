@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Log In error</title>
+<link rel="stylesheet" type="text/css" href="css/login_style.css">
+<style type="text/css">
+	#box{color: white;
+		text-align: center;}
+</style>
+</head>
+</head>
+<body>
+
+<h1 id="error_message" text-align="center"></h1>
+<div id="box"></div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var number = 5;
+		var url='http://cs4604.cs.vt.edu/~zjason/signup.html';
+		function countdown() {
+			setTimeout(countdown, 1000);
+			$('#box').html("Redirecting to sign up page in "+number+" seconds.");
+			number--;
+			if(number<0){
+				window.location = url;
+				number = 0;
+			}
+		}
+
+		function getUrlPara(sParam){
+			var sPageUrl = window.location.search.substring(1);
+			var sUrlVariables = sPageUrl.split('&');
+			var sparameter = sUrlVariables[0].split('=');
+			if (sparameter[0] == sParam){
+				return sparameter[1];
+			}
+		}
+
+		var error_code = getUrlPara('error');
+		if(error_code == '0'){
+			$('#error_message').html('Email address already exist!');
+		}else{
+			$('#error_message').html('Username already exist!');
+		}
+
+		countdown();
+	});
+
+</script>
+
+</body>
+</html>
